@@ -33,17 +33,18 @@ public class NBody {
 
         StdDraw.enableDoubleBuffering();
 
-        double time = 0;
+        double time = 0.0;
 
         while (time < T) {
             double[] xForces = new double[planetList.length];
             double[] yForces = new double[planetList.length];
+
             for (int i = 0; i < planetList.length; i++) {
                 xForces[i] = planetList[i].calcNetForceExertedByX(planetList);
                 yForces[i] = planetList[i].calcNetForceExertedByY(planetList);
             }
             for (int i = 0; i < planetList.length; i++) {
-                planetList[i].update(time, xForces[i], yForces[i]);
+                planetList[i].update(dt, xForces[i], yForces[i]);
             }
             StdDraw.setXscale(-galaxyRadius, galaxyRadius);
             StdDraw.setYscale(-galaxyRadius, galaxyRadius);
@@ -52,7 +53,7 @@ public class NBody {
                 planetList[i].draw();
             }
             StdDraw.show();
-            StdDraw.pause(50);
+            StdDraw.pause(10);
             time = time + dt;
         }
 
