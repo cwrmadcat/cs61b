@@ -52,7 +52,7 @@ public class NBody {
                 planetList[i].draw();
             }
             StdDraw.show();
-            StdDraw.pause(250);
+            StdDraw.pause(10);
             time = time + dt;
         }
 
