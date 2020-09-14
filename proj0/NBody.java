@@ -55,5 +55,13 @@ public class NBody {
             StdDraw.pause(250);
             time = time + dt;
         }
+
+        StdOut.printf("%d\n", planetList.length);
+        StdOut.printf("%.2e\n", galaxyRadius);
+        for (int i = 0; i < planetList.length; i++) {
+            StdOut.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n",
+            planetList[i].xxPos, planetList[i].yyPos, planetList[i].xxVel,
+            planetList[i].yyVel, planetList[i].mass, planetList[i].imgFileName);   
+        }
     }
 }
