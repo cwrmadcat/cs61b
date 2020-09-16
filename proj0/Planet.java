@@ -45,7 +45,7 @@ public class Planet {
     }
 
     public double calcNetForceExertedByX(Planet[] p) {
-        double totalXForce = 0;
+        double totalXForce = 0.0;
         for (int i = 0; i < p.length; i++) {
             if (this.equals(p[i])) {
                 continue;
@@ -56,7 +56,7 @@ public class Planet {
     }
 
     public double calcNetForceExertedByY(Planet[] p) {
-        double totalYForce = 0;
+        double totalYForce = 0.0;
         for (int i = 0; i < p.length; i++) {
             if (this.equals(p[i])) {
                 continue;
