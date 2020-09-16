@@ -45,8 +45,8 @@ public class NBody {
             for (int i = 0; i < planetList.length; i++) {
                 planetList[i].update(time, xForces[i], yForces[i]);
             }
-            StdDraw.setXscale(-galaxyRadius, galaxyRadius);
-            StdDraw.setYscale(-galaxyRadius, galaxyRadius);
+            StdDraw.setXscale(-2 * galaxyRadius, 2 * galaxyRadius);
+            StdDraw.setYscale(-2 * galaxyRadius, 2 * galaxyRadius);
             StdDraw.picture(0, 0, "images/starfield.jpg");
             for (int i = 0; i < planetList.length; i++) {
                 planetList[i].draw();
