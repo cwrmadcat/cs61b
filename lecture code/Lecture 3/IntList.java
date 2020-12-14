@@ -62,7 +62,26 @@ public class IntList {
         }
         return ref.first;
     }
-    
+
+    //Returns an IntList identical to L incremented by x.
+    //Original IntList cannot change.
+
+    public static IntList incrList(IntList L, int x) {
+        IntList newList = new IntList(L.first + x, null);
+        if (L.rest == null) {
+            return newList;
+        }
+        newList = new IntList(L.first + x, newList);
+        incrList(L.rest, x);
+    }
+
+    //Returns an IntList identical to L incremented by x.
+    //Not allowed to use new (to save memory).
+/*
+    public static IntList dincrList(IntList L, int x) {
+
+    }
+    */
 
     public static void main(String[] args) {
         IntList L = new IntList(15, null);
