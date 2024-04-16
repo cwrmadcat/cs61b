@@ -138,10 +138,9 @@ public class Model extends Observable {
      * */
     public static boolean emptySpaceExists(Board b) {
         // TODO: Fill in this function.
-        int maxCol = b.size();
-        int maxRow = maxCol;
-        for (int i = 0; i < maxCol; i++) {
-            for (int n = 0; n < maxRow; n++) {
+        int maxDim = b.size();
+        for (int i = 0; i < maxDim; i++) {
+            for (int n = 0; n < maxDim; n++) {
                 if (b.tile(i, n) == null) {
                     return true;
                 }
@@ -157,10 +156,9 @@ public class Model extends Observable {
      */
     public static boolean maxTileExists(Board b) {
         // TODO: Fill in this function.
-        int maxCol = b.size();
-        int maxRow = maxCol;
-        for (int i = 0; i < maxCol; i++) {
-            for (int n = 0; n < maxRow; n++) {
+        int maxDim = b.size();
+        for (int i = 0; i < maxDim; i++) {
+            for (int n = 0; n < maxDim; n++) {
                 if (b.tile(i, n) != null) {
                     if (b.tile(i, n).value() == MAX_PIECE) {
                         return true;
@@ -179,14 +177,13 @@ public class Model extends Observable {
      */
     public static boolean atLeastOneMoveExists(Board b) {
         // TODO: Fill in this function.
-        int maxCol = b.size();
-        int maxRow = maxCol;
+        int maxDim = b.size();
         if (emptySpaceExists(b)) {
             return true;
         }
         //Check in the vertical direction
-        for (int i = 0; i < maxCol; i++) {
-            for (int n = 0; n < maxRow-1; n++) {
+        for (int i = 0; i < maxDim; i++) {
+            for (int n = 0; n < maxDim-1; n++) {
                 if (b.tile(i, n) != null && b.tile(i,n+1) != null) {
                     if (b.tile(i, n).value() == b.tile(i, n+1).value()) {
                         return true;
@@ -195,8 +192,8 @@ public class Model extends Observable {
             }
         }
         //Check in the horizontal direction
-        for (int i = 0; i < maxRow; i++) {
-            for (int n = 0; n < maxCol-1; n++) {
+        for (int i = 0; i < maxDim; i++) {
+            for (int n = 0; n < maxDim-1; n++) {
                 if (b.tile(n, i) != null && b.tile(n+1,i) != null) {
                     if (b.tile(n, i).value() == b.tile(n+1, i).value()) {
                         return true;
